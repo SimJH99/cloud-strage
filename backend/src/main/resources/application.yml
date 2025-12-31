@@ -1,3 +1,22 @@
 spring:
-  application:
-    name: backend
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/myclouddb # docker-compose의 DB 이름과 같아야 함
+    username: postgres
+    password: password1234
+
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update # 개발 중엔 update (Entity 변경 시 테이블 자동 수정)
+      # 운영에선 절대 update 쓰면 안 됨! validate나 none 사용
+    properties:
+      hibernate:
+        format_sql: true # 로그에 SQL 예쁘게 출력
+        default_batch_fetch_size: 100 # N+1 문제 완화용 옵션 (미리 넣어두면 좋음)
+    show-sql: true # 콘솔에 쿼리 출력
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG # SQL 로그 레벨
