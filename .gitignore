@@ -1,0 +1,69 @@
+### 1. OS & Global (운영체제 및 공통) ###
+.DS_Store
+Thumbs.db
+*.sw?
+
+### 2. IDE & Editors (통합 개발 환경) ###
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# Eclipse / STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+### 3. Backend (Java / Spring Boot / Gradle) ###
+.gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Gradle Wrapper는 git에 올라가야 하므로 제외하지 않음 (중요)
+!gradle/wrapper/gradle-wrapper.jar
+!**/gradle/wrapper/gradle-wrapper.jar
+
+# Documentation
+HELP.md
+
+### 4. Frontend (Node.js / React / Vite) ###
+node_modules/
+dist/
+dist-ssr/
+coverage/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+### 5. Security & Env (보안 및 환경변수 - 절대 올리면 안됨!) ###
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
